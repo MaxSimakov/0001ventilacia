@@ -42,7 +42,7 @@ $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-900: #333333 !default;
 $black: #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -61,16 +61,16 @@ $grays: ("100": $gray-100,
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue: #0d6efd !default;
-$indigo: #6610f2 !default;
+$blue: #005CB4 !default;
+$indigo: #003C75 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
-$red: #dc3545 !default;
+$red: #E63C32 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
 $green: #198754 !default;
 $teal: #20c997 !default;
-$cyan: #0dcaf0 !default;
+$cyan: #EFF5FB !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -315,7 +315,7 @@ $stretched-link-z-index: 1 !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom: 1rem !default;
+$paragraph-margin-bottom: rem(30) !default;
 
 
 // Grid breakpoints
@@ -345,7 +345,7 @@ $container-max-widths: (sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px) !default;
+  xxl: 1465px) !default;
 // scss-docs-end container-max-widths
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -356,7 +356,7 @@ $container-max-widths: (sm: 540px,
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
+$grid-gutter-width: rem(38) !default;
 $grid-row-columns: 6 !default;
 
 $gutters: $spacers !default;
@@ -382,17 +382,17 @@ $border-color: $gray-300 !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius: .25rem !default;
-$border-radius-sm: .2rem !default;
+$border-radius: 3px !default;
+$border-radius-sm: 2.5px !default;
 $border-radius-lg: .3rem !default;
 $border-radius-pill: 50rem !default;
 // scss-docs-end border-radius-variables
 
 // scss-docs-start box-shadow-variables
-$box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow: 0px 3.33167px 3.33167px rgba(0, 0, 0, 0.25) !default;
 $box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;
-$box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
+$box-shadow-inset: inset 1px 1px 1px rgba(0, 0, 0, 0.25) !default;
 // scss-docs-end box-shadow-variables
 
 $component-active-color: $white !default;
@@ -468,11 +468,11 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
-$h1-font-size: $font-size-base * 2.5 !default;
+$h1-font-size: $font-size-base * 2.19 !default;
 $h2-font-size: $font-size-base * 2 !default;
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
-$h5-font-size: $font-size-base * 1.25 !default;
+$h5-font-size: $font-size-base * 1.375 !default;
 $h6-font-size: $font-size-base !default;
 // scss-docs-end font-variables
 

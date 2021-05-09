@@ -1,0 +1,122 @@
+// start .sManufacture
+.sManufacture {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+
+	&__slider {
+		padding-top: rem(15);
+		padding-bottom: rem(15);
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(55);
+			padding-bottom: rem(55);
+		}
+		.container {
+			position: relative;
+		}
+	}
+
+	.slider-index {
+		max-width: 1250px;
+		padding: rem(40) rem(10);
+		@media (min-width: 450px) {
+			padding: rem(40) rem(20);
+		}
+
+		&__slide {
+			@include mt;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			background-color: $white;
+			height: auto;
+			padding: rem(40) rem(12) rem(20);
+			box-shadow: 0px 3.68087px 3.68087px rgba(0, 0, 0, 0.25);
+			&:hover {
+				box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+			}
+			@media (min-width: 450px) {
+				padding: rem(44) rem(15) rem(20);
+			}
+			@include media-breakpoint-up(xl) {
+				padding: rem(44) rem(20) rem(30);
+			}
+		}
+		&__icon {
+			position: absolute;
+			width: 85px;
+			height: 85px;
+			left: -10px;
+			top: -35px;
+			@media (min-width: 450px) {
+				width: 100px;
+				height: 100px;
+				left: -20px;
+				top: -35px;
+			}
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+		&__title {
+			text-align: center;
+			font-weight: bold;
+			font-size: rem(20);
+			line-height: (24 / 20);
+			color: $indigo;
+			margin-bottom: rem(15);
+			@media (min-width: 450px) {
+				margin-bottom: rem(24);
+			}
+		}
+		&__img-wrap {
+			@include block(324, 152);
+			margin-bottom: rem(15);
+			@media (min-width: 450px) {
+				margin-bottom: rem(24);
+			}
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				object-fit: cover;
+			}
+		}
+		&__text {
+			height: 100%;
+		}
+		p {
+			color: $body-color;
+			font-size: $small;
+			line-height: (24 / 14);
+			margin-bottom: 0;
+			&:not(:last-child) {
+				margin-bottom: rem(25);
+			}
+			// @media (min-width: 400px) {
+			// 	font-size: rem(18);
+			// }
+			// @include media-breakpoint-up(md) {
+			// 	font-size: rem(15);
+			// }
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sManufacture

@@ -1,2 +1,67 @@
 mixin footer()
-	footer.footer
+	+b.FOOTER.footer#footer&attributes(attributes)
+		.container
+			.row
+				.col-12.col-md-8.col-lg-7.col-xl-4
+					+e.logo(href="/")
+						+e.logo-img
+							img(src="img/svg/footer-logo.svg", alt="")
+						+e.logo-title НПО ПМП Вентиляция
+						+e.logo-text Проектирование, производство и&nbsp;монтаж
+					+e.contacts
+						.row.roww-45
+							.col-5.col-sm-4.col-xl-5
+								span.light Телефон/факс:
+							.col-7.col-sm-8.col-xl-7
+								a(href="tel:+74997555751") +7 (499) 755-57-51
+						.row.roww-45
+							.col-5.col-sm-4.col-xl-5
+								span.light Время работы:
+							.col-7.col-sm-8.col-xl-7
+								span пн-пт с&nbsp;9:00 до&nbsp;17:00 <br> сб&nbsp;и&nbsp;вс&nbsp;&minus; выходные.
+						.row.roww-45
+							.col-5.col-sm-4.col-xl-5
+								span.light E-mail:
+							.col-7.col-sm-8.col-xl-7
+								a(href="mailto:general@ventilacia.ru") general@ventilacia.ru
+						.row.roww-45
+							.col-5.col-sm-4.col-xl-5
+								span.light.mb-0 Адрес:
+							.col-7.col-sm-8.col-xl-7
+								+e.SPAN.adress.mb-0 123298, г. Москва, ул. Маршала Бирюзова, д.&nbsp;4, к.&nbsp;2, подъезд&nbsp;3, офис 222.
+					+e.P.route Ближняя станция метро &laquo;Октябрьское поле&raquo; (последний вагон из&nbsp;центра, выход налево, лестница направо)
+				.col-12.col-lg-6.col-xl-4.d-none.d-xl-block
+					+e.menu
+						+e.subtitle.strong(href='#') популярная продукция
+						ul
+							li: a(href='#') Циклон ЦПО-4
+							li: a(href='#') Ванны ручной промывки
+							li: a(href='#') Технологические столы для разборки-сборки агрегатов
+							li: a(href='#') Платформы под размещение оборудования
+							li: a(href='#') Воздушный душ
+							li: a(href='#') Стационарные установки фильтрации
+						+e.subtitle.strong(href='#') популярные сферы применения
+						ul
+							li: a(href='#') Линии механической обработки изделий
+							li: a(href='#') Системы аспирации загрязненного воздуха и&nbsp;газов
+							li: a(href='#') Транспорт кислотного тумана
+							li: a(href='#') Транспорт сыпучих материалов
+				.col-12.col-md-4.col-lg-5.col-xl-4
+					+e.menu
+						.row
+							.col.col-md-12
+								+e.subtitle.strong(href='#') О&nbsp;компании
+								ul
+									li: a(href='#') О&nbsp;нас
+									li: a(href='#') Лицензии
+									li: a(href='#') Галерея
+									li: a(href='#') Информационные материалы
+									li: a(href='#') Вакансии
+							.col.col-md-12
+								+e.subtitle(href='#') Производство
+								+e.subtitle(href='#') Сотрудникам
+								ul
+									li: a(href='#') Контроль транспорта
+									li: a(href='#') Система заказов
+								+e.subtitle(href='#') Контакты
+			+e.copyright &copy;&nbsp;2013-2021, Все права защищены

@@ -1,5 +1,5 @@
 .top-nav {
-	position: sticky; 
+	position: sticky;
 	left: 0;
 	// left: 200px;
 	// right: -200px;
@@ -7,55 +7,91 @@
 	top: 0;
 	left: 0;
 	z-index: 800;
-	background-color: #fff;
-	border-bottom: 1px solid #000; 
-	--color-link: 255,
-	0,
-	0;
-	background-color: #{rgba(var(--color-link), .5)};
-	&.fixed { 
+	background-color: $white;
+
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+	&.fixed {
 		bottom: auto;
 		margin-top: 0;
 	}
-	.row{
-	 
+	.row {
+	}
+	.contacts {
+		flex-direction: row;
+		justify-content: flex-end;
+		// @include media-breakpoint-up(sm) {
+		// 	justify-content: space-evenly;
+		// }
+		width: 100%;
+		.top-btn {
+			margin: 0;
+			align-self: center;
+		}
+		&__tel {
+			display: none;
+			margin-bottom: 0;
+			align-self: center;
+			margin-right: rem(20);
+			font-size: rem(18);
+			@media (min-width: 455px) {
+				display: block;
+			}
+			@media (min-width: 510px) {
+				font-size: rem(24);
+			}
+		}
 	}
 
-	// 
-	@include media-breakpoint-up(xl) {}
+	//
+	@include media-breakpoint-up(xl) {
+	}
 
-	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(lg) {
+	}
 
-	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(md) {
+	}
 
-	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(sm) {
+	}
 
-	@include media-breakpoint-up(xs) {}
+	@include media-breakpoint-up(xs) {
+	}
 
-	// 
-	@include media-breakpoint-between(md, xl) {}
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
 
-	// 
-	@include media-breakpoint-only(xs) {}
+	//
+	@include media-breakpoint-only(xs) {
+	}
 
-	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(sm) {
+	}
 
-	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(md) {
+	}
 
-	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(lg) {
+	}
 
-	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-only(xl) {
+	}
 
-	// 
-	@include media-breakpoint-down(xl) {}
+	//
+	@include media-breakpoint-down(xl) {
+	}
 
-	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(lg) {
+	}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(md) {
+	}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+	}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-down(xs) {
+	}
 }
-
-

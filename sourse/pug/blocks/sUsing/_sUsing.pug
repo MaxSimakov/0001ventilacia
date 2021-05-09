@@ -1,0 +1,18 @@
+mixin sUsing(data)
+	// start sUsing
+	+b.SECTION.sUsing.section#sUsing&attributes(attributes)
+		+section-title-main(`Сферы применения`, `Мы реализуем комплексные инженерные решения в сфере промышленной вентиляции, аспирации и пневмотранспорта, характеризующиеся энергоэффективностью, грамотным техническим исполнением и высоким качеством выполняемых работ.`)
+		+e.content.bg-lightblue
+			.container
+				.row.justify-content-center
+					mixin item(i, t)
+						.col-sm-6.col-md-4.d-flex.justify-content-center
+							+e.item&attributes(attributes)
+								+e.img-wrap
+									img(src=`img/@2x/sUsing-${i}.jpg`, alt="")
+								+e.text!= t
+					+item(`1`, `Чистые помещения, гермозоны, опасные помещения`)
+					+item(`2`, `Линии механической обработки изделий с образованием пыли`)
+					+item(`3`, `Линии порошковой покраски`).mb-0
+				+e.btn.btn-danger(href="#") смотреть еще
+	// end sUsing

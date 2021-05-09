@@ -1,9 +1,22 @@
 mixin topLine()
 	// start topLine
-	+b.SECTION.topLine.section#topLine&attributes(attributes)
+	+b.topLine#topLine&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+			+e.wrapper
+				+b.board.d-none.d-lg-flex
+					+e.item--social(href="#")
+						img(src="img/svg/instagram.svg", alt="")
+					+e.item--language(href="#") en
+					+e.item--language.active(href="#") ru
+				+e.logo
+					+e.logo-img(href="/")
+						img(src="img/svg/main-logo.svg", alt="")
+					+e.logo-text
+						+e.title НПО ПМП Вентиляция
+						span проектирование, производство и&nbsp;монтаж
+				+b.contacts.d-none.d-xl-flex
+					+e.tel(href="tel:+74997555751") +7 (499) 755-57-51
+					+e.timetable пн-пт с&nbsp;9:00 до&nbsp;17:00&nbsp;сб и&nbsp;вс&nbsp;&minus; вых.
+				+b.top-btn.btn.d-none.d-lg-flex(href="#") Заказать звонок
+
 	// end topLine

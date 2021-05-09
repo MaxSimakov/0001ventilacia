@@ -1,14 +1,40 @@
-.navMenu{
+.navMenu {
+	position: relative;
 	display: flex;
+	justify-content: space-between;
 	list-style: none;
-	@include roww(20px);
+	// @include roww(38px);
 	position: relative;
 	margin-bottom: 0;
 	max-width: 100%;
 	flex-wrap: wrap;
-	&__link{
+	
+	&__link {
 		display: block;
 		text-align: center;
-		padding: rem(20) rem(10);
+		padding: 0 rem(10);
+		font-weight: bold;
+		line-height: (62 / 16);
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $indigo;
+		@include media-breakpoint-up(xl) {
+			padding: 0 rem(20);
+		}
+	}
+}
+
+.menu-mobile {
+	background-color: $indigo;
+	.navMenu {
+		flex-direction: column;
+		align-items: stretch;
+		
+		&__link	{
+			color: $white;
+			line-height: 2;
+			text-align: left;
+			padding-left: rem(20);
+		}
 	}
 }

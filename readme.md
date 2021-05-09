@@ -1,4 +1,1 @@
-1. Отключил lazy плагин. Поставил  loading="lazy"
-
-
-rm -rf node_modules
+1. <https://maxsimakov.github.io/0001ventilacia/public/index.html>

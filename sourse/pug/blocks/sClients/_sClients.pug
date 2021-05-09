@@ -1,0 +1,22 @@
+mixin sClients(data)
+	// start sClients
+	+b.SECTION.sClients.section#sClients&attributes(attributes)
+		+section-title-main(`Наши клиенты`, `Среди множества проектов реализованных нашей компанией мы гордимся теми, где поставленные задачи потребовали от нас применения нестандартных подходов и технических решений.`)
+		+e.slider
+			.container
+				+b.slider-index.swiper-container
+					.swiper-wrapper
+						mixin slide(i, t)
+							+e.slide.swiper-slide
+								+e.img-wrap
+									img(src=`img/@2x/sClients-${i}.png`, alt="")
+								
+						+slide(`1`)
+						+slide(`2`)
+						+slide(`3`)
+						+slide(`4`)
+						+slide(`5`)
+						+slide(`6`)
+				.swiper-button-prev.index
+				.swiper-button-next.index
+	// end sClients

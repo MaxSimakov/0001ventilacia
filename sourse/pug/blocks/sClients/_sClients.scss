@@ -1,0 +1,53 @@
+// start .sClients
+.sClients {
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+	&__slider {
+		padding-top: calc(#{rem(40)} / 2);
+		padding-bottom: calc(#{rem(140)} / 2);
+		@include media-breakpoint-up(xl) {
+		padding-top: rem(40);
+		padding-bottom: rem(140);
+		}
+		.container {
+			position: relative;
+		}
+	}
+
+	.slider-index {
+		max-width: 1230px;
+		margin: 0 rem(30);
+		@include media-breakpoint-up(sm) {
+			margin: auto;
+		}
+	
+		&__slide {
+			height: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		&__img-wrap {
+			&::before {
+				display: none;
+			}
+			// @include block(176, 55);
+			img {
+				position: static;
+				max-width: 100%;
+				width: auto;
+				height: auto;
+				// @include a-cent;
+			}
+		}
+	}	
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sClients

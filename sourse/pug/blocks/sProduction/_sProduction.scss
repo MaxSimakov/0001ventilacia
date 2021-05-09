@@ -1,0 +1,196 @@
+// start .sProduction
+.sProduction {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+
+	&__slider {
+		padding-top: calc(#{rem(65)} / 2);
+		padding-bottom: calc(#{rem(100)} / 2);
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(65);
+			padding-bottom: rem(100);
+		}
+		.container {
+			position: relative;
+		}
+	}
+
+	.slider-index {
+	max-width: 1230px;
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		background-color: $white;
+		padding: rem(16);
+		height: auto;
+		&:hover {
+			.slider-index__link {
+				box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+	&__img-wrap {
+		@include mt;
+		@include block(243, 183);
+		margin-bottom: rem(17);
+		border: 4.16459px solid $white;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	&__link {
+		position: relative;
+		display: block;
+		text-decoration: none;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border: 4.16459px solid $white;
+		background-color: $primary;
+		border-radius: 4px;
+		padding: rem(13) rem(43) rem(13) rem(17);
+		height: 100%;
+		&::after {
+			content: "";
+			@include a-cent(y);
+			right: 17px;
+			height: 22px;
+			width: 13px;
+			background-image: url(../img/svg/shevron-right.svg);
+		}
+	}
+	&__text {
+		display: block;
+		color: $white;
+		font-weight: bold;
+		font-size: rem(16);
+		line-height: (20 / 14);
+		@media (min-width: 400px) {
+			font-size: rem(18);
+		}
+		@include media-breakpoint-up(md) {
+			font-size: rem(15);
+		}
+	}
+}
+
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sProduction
+
+.section-title-main {
+	padding-top: calc(#{rem(60)} / 2);
+	padding-bottom: calc(#{rem(60)} / 2);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(60);
+		padding-bottom: rem(60);
+	}
+	h2 {
+		text-transform: uppercase;
+		color: $indigo;
+		line-height: (38 / 32);
+		margin-bottom: 0;
+		padding-bottom: rem(15);
+		font-weight: 400;
+		@include media-breakpoint-only(lg) {
+			font-size: rem(26);
+		}
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 0;
+			padding-left: rem(10);
+		}
+		@include media-breakpoint-up(xl) {
+			padding-bottom: 0;
+		}
+		@include media-breakpoint-up(xxl) {
+			padding-left: rem(40);
+		}
+	}
+	&__text {
+		position: relative;
+		margin-bottom: 0;
+		color: #00aeef;
+		line-height: (20 / 16);
+		font-size: rem(16);
+		padding: rem(7) rem(7) rem(7) rem(15);
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			// height: 2px;
+			// width: 100%;
+			height: 100%;
+				width: 2px;
+			background-color: $danger;
+		}
+		@include media-breakpoint-up(lg) {
+			padding: rem(10) rem(35) rem(10) rem(45);
+			&::before {
+				// height: 100%;
+				// width: 2px;
+			}
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: rem(18);
+		}
+		@include media-breakpoint-up(xxl) {
+			padding: rem(10) rem(55) rem(10) rem(75);
+		}
+	}
+}
+
+.swiper-button-prev.index,
+.swiper-button-next.index {
+	@include a-cent(y);
+	width: 30px;
+	height: 45px;
+	z-index: 5;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 22px 38px;
+	&::after {
+		content: "";
+	}
+}
+
+.swiper-button-prev.index {
+	background-image: url(../img/svg/shevron-left-red.svg);
+	left: 13px;
+	@include media-breakpoint-up(sm) {
+		left: -15px;
+	}
+	@include media-breakpoint-up(xxl) {
+		left: 55px;
+	}
+}
+.swiper-button-next.index {
+	background-image: url(../img/svg/shevron-right-red.svg);
+	right: 13px;
+	@include media-breakpoint-up(sm) {
+		right: -15px;
+	}
+	@include media-breakpoint-up(xxl) {
+		right: 55px;
+	}
+}
+
+

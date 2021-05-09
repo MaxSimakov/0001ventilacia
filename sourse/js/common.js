@@ -239,7 +239,7 @@ const JSCCommon = {
 	},
 	animateScroll() {
 
-		$(document).on('click', " .top-nav li a, .scroll-link", function () {
+		$(document).on('click', " .scroll-link", function () {
 			const elementClick = $(this).attr("href");
 			const destination = $(elementClick).offset().top;
 
@@ -332,7 +332,118 @@ function eventHandler() {
 
 	});
 	// modal window
+	const swiperProduction = new Swiper('.sProduction .slider-index', {
+		// Optional parameters
+		loop: true,
+		watchOverflow: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		lazy: {
+			loadPrevNext: true,
+		},
+		// Responsive breakpoints
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 20,
+			},
+			1400: {
+				slidesPerView: 4,
+				spaceBetween: 40,
+			},
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.sProduction .swiper-button-next',
+			prevEl: '.sProduction .swiper-button-prev',
+		},
+	});
 
+	const swiperClients = new Swiper('.sClients .slider-index', {
+		// Optional parameters
+		loop: true,
+		watchOverflow: true,
+		slidesPerView: 2,
+		spaceBetween: 20,
+		lazy: {
+			loadPrevNext: true,
+		},
+		autoplay: {
+			delay: 5000,
+		},
+		// Responsive breakpoints
+		breakpoints: {
+			400: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 4,
+			},
+			992: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+			},
+			1200: {
+				slidesPerView: 5,
+			},
+			1400: {
+				slidesPerView: 6,
+				spaceBetween: 35,
+
+			},
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.sClients .swiper-button-next',
+			prevEl: '.sClients .swiper-button-prev',
+		},
+	});
+	const swiperManufacture = new Swiper('.sManufacture .slider-index', {
+		// Optional parameters
+		loop: true,
+		watchOverflow: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		lazy: {
+			loadPrevNext: true,
+		},
+		// Responsive breakpoints
+		breakpoints: {
+			450: {
+				slidesPerView: 1,
+				spaceBetween: 40,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+			1400: {
+				slidesPerView: 3,
+				spaceBetween: 60,
+			},
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.sManufacture .swiper-button-next',
+			prevEl: '.sManufacture .swiper-button-prev',
+		},
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

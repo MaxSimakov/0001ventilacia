@@ -1,0 +1,21 @@
+mixin sProduction(data)
+	// start sProduction
+	+b.SECTION.sProduction.section#sProduction&attributes(attributes)
+		+section-title-main(`Продукция`, `Мы реализуем комплексные инженерные решения в сфере промышленной вентиляции, аспирации и пневмотранспорта, характеризующиеся энергоэффективностью, грамотным техническим исполнением и высоким качеством выполняемых работ.`)
+		+e.slider.bg-lightblue
+			.container
+				+b.slider-index.swiper-container
+					.swiper-wrapper
+						mixin slide(i, t)
+							+e.slide.swiper-slide
+								+e.img-wrap
+									img(src=`img/@2x/sProduction-${i}.jpg`, alt="")
+								+e.link(href="#")
+									+e.text!=t
+						+slide(`1`, `Сварные воздуховоды из&nbsp;нержавеющей стали и&nbsp;титана`)
+						+slide(`2`, `Аспирационные воздуховоды с&nbsp;ревизией`)
+						+slide(`3`, `Аспирационные зонты и&nbsp;бортоотсосы`)
+						+slide(`4`, `Устройства управления воздушными (газовыми) потоками`)
+				.swiper-button-prev.index
+				.swiper-button-next.index
+	// end sProduction

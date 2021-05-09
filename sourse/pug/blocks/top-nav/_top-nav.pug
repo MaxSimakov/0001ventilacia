@@ -9,12 +9,17 @@ mixin mob-mnu()
 		//- let dataJson = JSON.parse(json);
 	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js.d-lg-none
-		+b.toggle-menu-mobile--js.on
+		+b.toggle-menu-mobile--js
 			span
 		+e.inner
 		
 			+mnu()
-			.text-right
+			+e.tel(href="tel:+74997555751") +7 (499) 755-57-51
+			+b.board
+				+e.item--social(href="#")
+					img(src="img/svg/instagram.svg", alt="")
+				+e.item--language(href="#") en
+				+e.item--language.active(href="#") ru
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
@@ -26,5 +31,9 @@ mixin top-nav()
 						span
 				.col.d-none.d-lg-block
 					+mnu()
+				.col.d-lg-none.d-flex.align-items-center
+					+b.contacts
+						+e.tel(href="tel:+74997555751") +7 (499) 755-57-51
+						+b.top-btn.btn(href="#") Заказать звонок
 					
 	// end top-nav

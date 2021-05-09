@@ -19,5 +19,14 @@ mixin arrow()
 
 mixin ie11()
 	//- modernizer and for ie11
-	 
+	
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+
+mixin section-title-main(h, t)
+	+b.section-title-main&attributes(attributes)
+		.container
+			.row
+				.col-lg-3.d-flex.align-items-center
+					h2!= h
+				.col-lg-9
+					+e.P.text!= t

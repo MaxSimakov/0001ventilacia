@@ -1,6 +1,6 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -19,7 +19,8 @@ var JSCCommon = {
 	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	modalCall: function modalCall() {
-		$(".link-modal-js").fancybox({
+		var link = ".link-modal-js";
+		$(link).fancybox({
 			arrows: false,
 			infobar: false,
 			touch: false,
@@ -50,7 +51,7 @@ var JSCCommon = {
 			$.fancybox.close();
 		});
 		$.fancybox.defaults.backFocus = false;
-		var linkModal = document.querySelectorAll('.link-modal');
+		var linkModal = document.querySelectorAll(link);
 
 		function addData() {
 			linkModal.forEach(function (element) {
@@ -247,7 +248,7 @@ var JSCCommon = {
 		});
 	},
 	animateScroll: function animateScroll() {
-		$(document).on('click', " .top-nav li a, .scroll-link", function () {
+		$(document).on('click', " .scroll-link", function () {
 			var elementClick = $(this).attr("href");
 			var destination = $(elementClick).offset().top;
 			$('html, body').animate({
@@ -330,6 +331,117 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+
+	var swiperProduction = new Swiper('.sProduction .slider-index', {
+		// Optional parameters
+		loop: true,
+		watchOverflow: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		lazy: {
+			loadPrevNext: true
+		},
+		// Responsive breakpoints
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 20
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 20
+			},
+			1400: {
+				slidesPerView: 4,
+				spaceBetween: 40
+			}
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.sProduction .swiper-button-next',
+			prevEl: '.sProduction .swiper-button-prev'
+		}
+	});
+	var swiperClients = new Swiper('.sClients .slider-index', {
+		// Optional parameters
+		loop: true,
+		watchOverflow: true,
+		slidesPerView: 2,
+		spaceBetween: 20,
+		lazy: {
+			loadPrevNext: true
+		},
+		autoplay: {
+			delay: 5000
+		},
+		// Responsive breakpoints
+		breakpoints: {
+			400: {
+				slidesPerView: 3
+			},
+			768: {
+				slidesPerView: 4
+			},
+			992: {
+				slidesPerView: 5,
+				spaceBetween: 30
+			},
+			1200: {
+				slidesPerView: 5
+			},
+			1400: {
+				slidesPerView: 6,
+				spaceBetween: 35
+			}
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.sClients .swiper-button-next',
+			prevEl: '.sClients .swiper-button-prev'
+		}
+	});
+	var swiperManufacture = new Swiper('.sManufacture .slider-index', {
+		// Optional parameters
+		loop: true,
+		watchOverflow: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		lazy: {
+			loadPrevNext: true
+		},
+		// Responsive breakpoints
+		breakpoints: {
+			450: {
+				slidesPerView: 1,
+				spaceBetween: 40
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 40
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 40
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 40
+			},
+			1400: {
+				slidesPerView: 3,
+				spaceBetween: 60
+			}
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.sManufacture .swiper-button-next',
+			prevEl: '.sManufacture .swiper-button-prev'
+		}
+	});
 }
 
 ;
