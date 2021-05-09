@@ -173,9 +173,41 @@ $h: em(2);
 		margin: 0;
 		margin-bottom: rem(10);
 		padding: rem(15) rem(10) rem(15) rem(20);
-		border-top: 1px solid hsla(0,0%,100%,.13);
+		border-top: 1px solid hsla(0, 0%, 100%, 0.13);
 		&:hover {
 			color: shift-color($danger, 15%);
+		}
+	}
+}
+
+.menu-mobile {
+	background-color: $indigo;
+	.navMenu {
+		flex-direction: column;
+		align-items: stretch;
+
+		&__link {
+			color: $white;
+			line-height: 2;
+			text-align: left;
+			padding-left: rem(20);
+		}
+		&__btn-search {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-left: rem(20);
+			padding-right: rem(20);
+			span {
+				font-size: rem(16);
+				font-weight: 700;
+				text-transform: uppercase;
+				color: $white;
+				line-height: 2;
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+			}
 		}
 	}
 }

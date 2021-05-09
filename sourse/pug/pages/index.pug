@@ -9,6 +9,7 @@ include ../blocks/sUsing/_sUsing.pug
 include ../blocks/sManufacture/_sManufacture.pug
 include ../blocks/sClients/_sClients.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sQuestions/_sQuestions.pug
 
 block variables
 	- let  mainPage= null 
@@ -28,7 +29,8 @@ block pagecontent
 	+sUsing()
 	+sManufacture()
 	+sClients()
-	+sContact().bg-lightblue
+	+sContact()
+	+sQuestions().bg-lightblue
 
 	//- +headerBlock()
 	//- +sForm()

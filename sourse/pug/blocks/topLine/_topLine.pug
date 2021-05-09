@@ -14,9 +14,11 @@ mixin topLine()
 					+e.logo-text
 						+e.title НПО ПМП Вентиляция
 						span проектирование, производство и&nbsp;монтаж
+				+e.call
+					a(href="tel:+74997555751")
+						+icon(`telephone-call`)
 				+b.contacts.d-none.d-xl-flex
 					+e.tel(href="tel:+74997555751") +7 (499) 755-57-51
 					+e.timetable пн-пт с&nbsp;9:00 до&nbsp;17:00&nbsp;сб и&nbsp;вс&nbsp;&minus; вых.
 				+b.top-btn.btn.d-none.d-lg-flex(href="#") Заказать звонок
-
 	// end topLine

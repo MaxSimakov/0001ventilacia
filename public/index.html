@@ -30,7 +30,10 @@
 						</li>
 						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Контакты</a>
 						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">???</a>
+						<li class="navMenu__item navMenu__item--search" temprop="item" itemprop="url"><a class="navMenu__btn-search btn" href="#"><span>Поиск</span>
+							<svg class="icon icon-search ">
+								<use xlink:href="img/svg/sprite.svg#search"></use>
+							</svg></a>
 						</li>
 					</ul><a class="menu-mobile__tel" href="tel:+74997555751">+7 (499) 755-57-51</a>
 					<div class="board"><a class="board__item board__item--social" href="#"><img src="img/svg/instagram.svg" alt=""/></a><a class="board__item board__item--language" href="#">en</a><a class="board__item board__item--language active" href="#">ru</a>
@@ -51,6 +54,11 @@
 									<div class="topLine__title">НПО ПМП Вентиляция
 									</div><span>проектирование, производство и&nbsp;монтаж</span>
 								</div>
+							</div>
+							<div class="topLine__call"><a href="tel:+74997555751">
+									<svg class="icon icon-telephone-call ">
+										<use xlink:href="img/svg/sprite.svg#telephone-call"></use>
+									</svg></a>
 							</div>
 							<div class="contacts d-none d-xl-flex"><a class="contacts__tel" href="tel:+74997555751">+7 (499) 755-57-51</a>
 								<div class="contacts__timetable">пн-пт с&nbsp;9:00 до&nbsp;17:00&nbsp;сб и&nbsp;вс&nbsp;&minus; вых.
@@ -84,7 +92,10 @@
 								</li>
 								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Контакты</a>
 								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">???</a>
+								<li class="navMenu__item navMenu__item--search" temprop="item" itemprop="url"><a class="navMenu__btn-search btn" href="#"><span>Поиск</span>
+									<svg class="icon icon-search ">
+										<use xlink:href="img/svg/sprite.svg#search"></use>
+									</svg></a>
 								</li>
 							</ul>
 						</div>
@@ -114,23 +125,7 @@
 				<div class="sProduction__slider bg-lightblue">
 					<div class="container">
 						<div class="slider-index swiper-container">
-							<div class="swiper-wrapper">
-									<div class="slider-index__slide swiper-slide">
-										<div class="slider-index__img-wrap"><img src="img/@2x/sProduction-1.jpg" alt=""/>
-										</div><a class="slider-index__link" href="#"><span class="slider-index__text">Сварные воздуховоды из&nbsp;нержавеющей стали и&nbsp;титана</span></a>
-									</div>
-									<div class="slider-index__slide swiper-slide">
-										<div class="slider-index__img-wrap"><img src="img/@2x/sProduction-2.jpg" alt=""/>
-										</div><a class="slider-index__link" href="#"><span class="slider-index__text">Аспирационные воздуховоды с&nbsp;ревизией</span></a>
-									</div>
-									<div class="slider-index__slide swiper-slide">
-										<div class="slider-index__img-wrap"><img src="img/@2x/sProduction-3.jpg" alt=""/>
-										</div><a class="slider-index__link" href="#"><span class="slider-index__text">Аспирационные зонты и&nbsp;бортоотсосы</span></a>
-									</div>
-									<div class="slider-index__slide swiper-slide">
-										<div class="slider-index__img-wrap"><img src="img/@2x/sProduction-4.jpg" alt=""/>
-										</div><a class="slider-index__link" href="#"><span class="slider-index__text">Устройства управления воздушными (газовыми) потоками</span></a>
-									</div>
+							<div class="swiper-wrapper"><a class="slider-index__slide swiper-slide" href="#"><span class="slider-index__img-wrap"><img src="img/@2x/sProduction-1.jpg" alt=""/></span><span class="slider-index__link"><span class="slider-index__text">Сварные воздуховоды из&nbsp;нержавеющей стали и&nbsp;титана</span></span></a><a class="slider-index__slide swiper-slide" href="#"><span class="slider-index__img-wrap"><img src="img/@2x/sProduction-2.jpg" alt=""/></span><span class="slider-index__link"><span class="slider-index__text">Аспирационные воздуховоды с&nbsp;ревизией</span></span></a><a class="slider-index__slide swiper-slide" href="#"><span class="slider-index__img-wrap"><img src="img/@2x/sProduction-3.jpg" alt=""/></span><span class="slider-index__link"><span class="slider-index__text">Аспирационные зонты и&nbsp;бортоотсосы</span></span></a><a class="slider-index__slide swiper-slide" href="#"><span class="slider-index__img-wrap"><img src="img/@2x/sProduction-4.jpg" alt=""/></span><span class="slider-index__link"><span class="slider-index__text">Устройства управления воздушными (газовыми) потоками</span></span></a>
 							</div>
 						</div>
 						<div class="swiper-button-prev index"></div>
@@ -333,8 +328,8 @@
 			</section>
 			<!-- end sClients-->
 			<!-- start sContact-->
-			<section class="sContact section bg-lightblue" id="sContact">
-				<div class="section-title-main">
+			<section class="sContact section" id="sContact">
+				<div class="section-title-main bg-lightblue">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-3 d-flex align-items-center">
@@ -347,8 +342,113 @@
 						</div>
 					</div>
 				</div>
+				<div class="sContact__content">
+					<div class="tabs tabs--js">
+						<div class="container">
+							<div class="tabs__caption d-none d-lg-flex">
+								<div class="tabs__btn active"><span>Отдел продаж</span></div>
+								<div class="tabs__btn"><span>Завод</span></div>
+								<div class="tabs__btn"><span>Склад</span></div>
+								<div class="tabs__btn"><span>Бухгалтерия</span></div>
+								<div class="tabs__btn"><span>Центральный офис</span></div>
+							</div>
+						</div>
+						<div class="tabs__wrap">
+							<div class="tabs__content active">
+								<div class="container">
+									<div class="sContact__text-wrap">
+										<p>Московская область, Солнечногорский район, 47-ой километр Пятницкого шоссе, д. Новая, Завод НПО ПМП Вентиляция.</p>
+										<p>Начальник отдела продаж: Ионов Евгений Владимирович Телефон/факс: +7 (499) 755-57-51 доб.222, моб. +7 967 112-44-67</p>
+										<p>Время работы: пн-чт 8:00–17:00, пт 8:00 – 15:00, сб и вс - выходные.</p><a class="top-btn btn" href="#">Заказать звонок</a>
+									</div>
+								</div>
+								<div class="sContact__map-wrap"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adfde226ae904fbb1c5ea492121d73e55033f87fbf406f4ef9d7d1185980a88f0&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+								</div>
+							</div>
+							<div class="tabs__content">
+								<div class="container">
+									<div class="sContact__text-wrap">
+										<p>Московская область, Солнечногорский район, 47-ой километр Пятницкого шоссе, д. Новая, Завод НПО ПМП Вентиляция.</p>
+										<p>Начальник отдела продаж: Ионов Евгений Владимирович Телефон/факс: +7 (499) 755-57-51 доб.222, моб. +7 967 112-44-67</p>
+										<p>Время работы: пн-чт 8:00–17:00, пт 8:00 – 15:00, сб и вс - выходные.</p><a class="top-btn btn" href="#">Заказать звонок</a>
+									</div>
+								</div>
+								<div class="sContact__map-wrap"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adfde226ae904fbb1c5ea492121d73e55033f87fbf406f4ef9d7d1185980a88f0&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+								</div>
+							</div>
+							<div class="tabs__content">
+								<div class="container">
+									<div class="sContact__text-wrap">
+										<p>Московская область, Солнечногорский район, 47-ой километр Пятницкого шоссе, д. Новая, Завод НПО ПМП Вентиляция.</p>
+										<p>Начальник отдела продаж: Ионов Евгений Владимирович Телефон/факс: +7 (499) 755-57-51 доб.222, моб. +7 967 112-44-67</p>
+										<p>Время работы: пн-чт 8:00–17:00, пт 8:00 – 15:00, сб и вс - выходные.</p><a class="top-btn btn" href="#">Заказать звонок</a>
+									</div>
+								</div>
+								<div class="sContact__map-wrap"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adfde226ae904fbb1c5ea492121d73e55033f87fbf406f4ef9d7d1185980a88f0&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+								</div>
+							</div>
+							<div class="tabs__content">
+								<div class="container">
+									<div class="sContact__text-wrap">
+										<p>Московская область, Солнечногорский район, 47-ой километр Пятницкого шоссе, д. Новая, Завод НПО ПМП Вентиляция.</p>
+										<p>Начальник отдела продаж: Ионов Евгений Владимирович Телефон/факс: +7 (499) 755-57-51 доб.222, моб. +7 967 112-44-67</p>
+										<p>Время работы: пн-чт 8:00–17:00, пт 8:00 – 15:00, сб и вс - выходные.</p><a class="top-btn btn" href="#">Заказать звонок</a>
+									</div>
+								</div>
+								<div class="sContact__map-wrap"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adfde226ae904fbb1c5ea492121d73e55033f87fbf406f4ef9d7d1185980a88f0&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+								</div>
+							</div>
+							<div class="tabs__content">
+								<div class="container">
+									<div class="sContact__text-wrap">
+										<p>Московская область, Солнечногорский район, 47-ой километр Пятницкого шоссе, д. Новая, Завод НПО ПМП Вентиляция.</p>
+										<p>Начальник отдела продаж: Ионов Евгений Владимирович Телефон/факс: +7 (499) 755-57-51 доб.222, моб. +7 967 112-44-67</p>
+										<p>Время работы: пн-чт 8:00–17:00, пт 8:00 – 15:00, сб и вс - выходные.</p><a class="top-btn btn" href="#">Заказать звонок</a>
+									</div>
+								</div>
+								<div class="sContact__map-wrap"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adfde226ae904fbb1c5ea492121d73e55033f87fbf406f4ef9d7d1185980a88f0&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 			<!-- end sContact-->
+			<!-- start sQuestions-->
+			<section class="sQuestions section bg-lightblue" id="sQuestions">
+				<div class="container">
+					<div class="sQuestions__img-wrap sQuestions__img-wrap--left"><img src="img/svg/sQuestions-1.svg" alt=""/>
+					</div>
+					<div class="sQuestions__img-wrap sQuestions__img-wrap--right"><img src="img/svg/sQuestions-2.svg" alt=""/>
+					</div>
+					<div class="sQuestions__inner">
+						<div class="section-title text-center text-danger">
+							<h2>Остались вопросы?</h2>
+						</div>
+						<p>Заполните форму запроса, и&nbsp;наш менеджер свяжется с&nbsp;Вами в&nbsp;ближайшее время для обсуждения деталей.</p>
+						<div class="form-wrap">
+							<form>
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Имя"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Телефон"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="textarea" placeholder="Вопрос"></textarea>
+								</div>
+								<!-- +e.input-wrap-->
+								<button class="form-wrap__btn btn btn-danger" type="submit">отправить
+								</button>
+								<div class="form-wrap__polite">
+									<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text">Согласен (-на) на обработку  <a href="#">персональных данных</a></small>
+									</label>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sQuestions-->
 			<footer class="footer" id="footer">
 				<div class="container">
 					<div class="row">

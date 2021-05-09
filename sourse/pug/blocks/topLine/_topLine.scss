@@ -16,7 +16,9 @@
 		flex-wrap: wrap;
 		padding-top: rem(10);
 		padding-bottom: rem(7);
+		margin-bottom: rem(5);
 		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
 			padding-top: rem(32);
 			padding-bottom: rem(25);
 		}
@@ -37,7 +39,7 @@
 		flex-wrap: nowrap;
 		@include media-breakpoint-up(md) {
 			justify-content: space-between;
-		}		
+		}
 		@include media-breakpoint-up(lg) {
 			width: auto;
 		}
@@ -92,6 +94,29 @@
 			}
 			@include media-breakpoint-up(lg) {
 				font-size: rem(16);
+			}
+		}
+	}
+	&__call {
+		display: none;
+		@include media-breakpoint-only(lg) {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			padding-bottom: rem(7);
+		}
+		.icon-telephone-call {
+			@include mt;
+			color: $danger;
+			font-size: rem(24);
+		}
+		a {
+			
+			padding: rem(7);
+			&:hover {
+				.icon-telephone-call {
+					color: shift-color($danger, 15%);
+				}
 			}
 		}
 	}
@@ -206,7 +231,6 @@
 		line-height: (24 / 14);
 		color: #629fda;
 	}
-
 }
 .top-btn {
 	position: relative;
@@ -224,6 +248,10 @@
 	align-self: flex-end;
 	@include media-breakpoint-up(lg) {
 		margin-right: rem(30);
+	}
+	&:hover,
+	&:active {
+		box-shadow: 0 0 0 0.25rem rgba($color: #629fda, $alpha: 0.25);
 	}
 	&::before {
 		content: "";

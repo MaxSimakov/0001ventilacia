@@ -75,6 +75,8 @@
 		text-decoration: none;
 		color: $white;
 		border-radius: $border-radius;
+		padding-left: rem(10);
+		padding-right: rem(10);
 	}
 	@include media-breakpoint-up(xl) {
 	}

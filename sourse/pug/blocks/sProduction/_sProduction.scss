@@ -46,6 +46,7 @@
 		}
 	}
 	&__link {
+		@include mt;
 		position: relative;
 		display: block;
 		text-decoration: none;
@@ -65,6 +66,7 @@
 		}
 	}
 	&__text {
+		
 		display: block;
 		color: $white;
 		font-weight: bold;

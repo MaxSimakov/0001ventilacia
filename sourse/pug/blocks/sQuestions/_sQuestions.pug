@@ -1,0 +1,22 @@
+mixin sQuestions(data)
+	// start sQuestions
+	+b.SECTION.sQuestions.section#sQuestions&attributes(attributes)
+		.container
+			+e.img-wrap--left
+				img(src="img/svg/sQuestions-1.svg", alt="")
+			+e.img-wrap--right
+				img(src="img/svg/sQuestions-2.svg", alt="")
+			+e.inner
+				+b.section-title.text-center.text-danger
+					h2 Остались вопросы?
+				p Заполните форму запроса, и&nbsp;наш менеджер свяжется с&nbsp;Вами в&nbsp;ближайшее время для обсуждения деталей.
+				+form-wrap
+					+input(`Имя`,  t='text', ``, name= t)
+					+input(`Телефон`,  t='tel', ``, name= t)
+					+input(`Вопрос`,  t='textarea', ``, name= t)
+					+e.BUTTON.btn.btn.btn-danger(type="submit") отправить
+					+e.polite
+						+b.LABEL.custom-input.form-check
+							+e.INPUT.input.form-check-input(name='checkbox', type='checkbox', checked)
+							+e.SMALL.text Согласен (-на) на обработку  #[a(href='#') персональных данных]
+	// end sQuestions

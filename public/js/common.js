@@ -150,7 +150,7 @@ var JSCCommon = {
 				if (!content.dataset.tabContent == data) return;
 				var active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
 
-				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary  mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
+				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary d-lg-none  mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
 			});
 			tabs.addEventListener('click', function (element) {
 				var btn = element.target.closest("[data-tab-btn]:not(.active)");

@@ -107,6 +107,11 @@
 			}
 		}
 	}
+	&__copyright {
+		font-size: rem(14);
+		line-height: 1;
+		padding-top: rem(45);
+	}
 
 	//
 	@include media-breakpoint-up(xl) {

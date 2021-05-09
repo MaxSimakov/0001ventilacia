@@ -56,7 +56,9 @@ mixin mnu()
 						
 		each linkPatch, linkName in nav
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url")= linkName
-		+e.LI.item( temprop="item" itemprop="url")
-			+e.A.link(href="#" itemprop="url") ???
+		+e.LI.item--search( temprop="item" itemprop="url")
+			+e.A.btn-search.btn(href="#")
+				span Поиск
+				+icon('search')
 				
 //- /menu
