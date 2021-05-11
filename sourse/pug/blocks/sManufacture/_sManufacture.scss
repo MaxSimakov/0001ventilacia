@@ -76,6 +76,18 @@
 			@media (min-width: 450px) {
 				margin-bottom: rem(24);
 			}
+			&.video {
+				&::after {
+					content: "";
+					@include a-cent;
+					width: rem(38);
+					height: rem(38);
+					background-image: url(../img/svg/youtube-play.svg);
+					background-repeat: no-repeat;
+					background-size: contain;
+					z-index: 1;
+				}
+			}
 			img {
 				position: absolute;
 				width: 100%;

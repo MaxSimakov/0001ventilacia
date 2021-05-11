@@ -442,6 +442,15 @@ function eventHandler() {
 			prevEl: '.sManufacture .swiper-button-prev'
 		}
 	});
+	var swiperHeaderBlock = new Swiper('.headerBlock__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 'auto',
+		speed: 800,
+		// freeMode: true,
+		loopFillGroupWithBlank: true,
+		touchRatio: 0.2,
+		slideToClickedSlide: true // freeModeMomentum: true,
+
+	}));
 }
 
 ;

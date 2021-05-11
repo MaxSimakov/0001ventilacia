@@ -331,6 +331,7 @@ function eventHandler() {
 		freeModeMomentum: true,
 
 	});
+	
 	// modal window
 	const swiperProduction = new Swiper('.sProduction .slider-index', {
 		// Optional parameters
@@ -443,6 +444,19 @@ function eventHandler() {
 			nextEl: '.sManufacture .swiper-button-next',
 			prevEl: '.sManufacture .swiper-button-prev',
 		},
+	});
+
+	const swiperHeaderBlock = new Swiper('.headerBlock__slider--js', {
+		// slidesPerView: 5,
+		...defaultSl,
+		slidesPerView: 'auto',
+		speed: 800,
+		// freeMode: true,
+		loopFillGroupWithBlank: true,
+		touchRatio: 0.2,
+		slideToClickedSlide: true,
+		// freeModeMomentum: true,
+
 	});
 };
 if (document.readyState !== 'loading') {

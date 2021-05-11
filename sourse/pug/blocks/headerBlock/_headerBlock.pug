@@ -2,9 +2,16 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					.swiper-slide 
+						.img-wrap
+							img(src="img/@2x/header-block.jpg", alt="")
+					.swiper-slide 
+						.img-wrap
+							img(src="img/@2x/header-block.jpg", alt="")
+					.swiper-slide 
+						.img-wrap
+							img(src="img/@2x/header-block.jpg", alt="")
+				.swiper-pagination
 	// end headerBlock
