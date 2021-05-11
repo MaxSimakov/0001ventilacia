@@ -1,0 +1,86 @@
+// start .sCatalog
+.sCatalog {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+
+	--fontSizeBase: 16px;
+
+	&__row {
+		@include media-breakpoint-up(xl) {
+			@include roww(38px);
+		}
+		// padding-bottom: rem();
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sCatalog
+
+.catalogCard {
+	display: flex;
+	height: calc(100% - #{rem(37)});
+	margin-bottom: rem(37);
+	flex-direction: column;
+	text-decoration: none !important;
+	background: #eff5fb;
+	color: #fff !important;
+	padding: rem(16);
+	&:hover {
+		.catalogCard__textWrap {
+			box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	&__text {
+	}
+
+	&__imgWrap {
+		@include mt;
+		@include block(243, 183);
+		margin-bottom: rem(17);
+		border: 4.16459px solid $white;
+		img {
+			@include a-cent;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__textWrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include mt;
+		position: relative;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border: 4.16459px solid $white;
+		background-color: $primary;
+		border-radius: 4px;
+		padding: rem(13) rem(23) rem(13) rem(17);
+		height: 100%;
+	}
+	&__text {
+		color: $white;
+		font-weight: bold;
+		line-height: (20 / 14);
+
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
+	}
+	&__iconWrap {
+		margin-left: rem(10);
+		flex-shrink: 0;
+
+		.icon {
+			font-size: rem(16);
+		}
+	}
+}
