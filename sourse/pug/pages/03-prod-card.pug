@@ -11,6 +11,7 @@ include ../blocks/sClients/_sClients.pug
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sQuestions/_sQuestions.pug
 include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sidebar/_sidebar.pug
 
 block variables
 	- let  mainPage= null 
@@ -31,7 +32,7 @@ block pagecontent
 			+breadcrumb('Главная', 'Продукция', 'Элементы сварных воздуховодов', 'Прямой участок трубы сварного воздуховода')
 			+e.row.row.gy-5
 				+e.sidebar-col.col-lg-4.col-xl-3
-					+e.sidebar
+					+sidebar
 				+e.content-col.col-lg-8.col-xl-9
 					+e.title
 						h1 Прямой участой трубы сварного воздуховода

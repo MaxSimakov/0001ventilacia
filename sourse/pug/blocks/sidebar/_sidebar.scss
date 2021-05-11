@@ -1,0 +1,85 @@
+// start .sidebar
+.sidebar {
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+		.menu{
+			display: none;
+			background: $cyan;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+			padding: rem(35) rem(34);
+			font-size: rem(14);
+		}
+		ul{
+			list-style: none;
+		
+		}
+		li{
+			margin-bottom: rem(12);
+				padding-right: rem(20);
+		}
+		.has-child{
+			margin-bottom: 1em;
+		}
+		a{
+			text-decoration: none !important;
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+	a{
+
+		border-bottom: 1px solid;
+		text-decoration: none !important;
+		font-weight: bold;
+		&:hover{
+			border-color: transparent;
+		}
+	}
+} // end.sidebar
+
+.has-child {
+	position: relative;
+
+	&::after{
+		content: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.29289 8.20711C7.68342 8.59763 8.31658 8.59763 8.70711 8.20711L15.0711 1.84315C15.4616 1.45262 15.4616 0.819457 15.0711 0.428932C14.6805 0.0384078 14.0474 0.0384078 13.6569 0.428932L8 6.08579L2.34315 0.428932C1.95262 0.0384078 1.31946 0.0384078 0.928932 0.428932C0.538408 0.819457 0.538408 1.45262 0.928932 1.84315L7.29289 8.20711ZM7 7V7.5H9V7H7Z' fill='%23005CB4'/%3E%3C/svg%3E%0A");
+		position: absolute;
+		right: 0;
+		top: rem(2);
+		@include mt;
+	}
+	&.active .sub-menu{
+		display: block;
+	}
+	&.active{
+		&::after{
+			transform: rotateX(180deg);
+		}
+	}
+}
+.has-child > a{
+	// border-bottom: 1px solid;
+	border: none !important;
+	text-decoration: none !important;
+	font-weight: bold;
+	display: block;
+	margin-right: -40px;
+	&:hover{
+		border-color: transparent;
+	}
+}
+.sub-menu{
+		padding-top: 1rem;
+		display: none;
+		a{
+			font-weight: normal;
+			border-bottom: 1px solid transparent;
+			&:hover{
+				border-color: currentColor;
+			}
+		}
+}
