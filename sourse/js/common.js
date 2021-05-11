@@ -444,6 +444,44 @@ function eventHandler() {
 			prevEl: '.sManufacture .swiper-button-prev',
 		},
 	});
+	//luckyone js
+	let prodCardThumb = new Swiper('.sProdCard-thumb-js', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+
+		freeMode: true,
+		loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		slideToClickedSlide: true,
+		freeModeMomentum: true,
+		slideToClickedSlide: true,
+
+		// navigation: {
+		// 	nextEl: '.sProdCard-thumb-next-js',
+		// 	prevEl: '.sProdCard-thumb-prev-js',
+		// },
+
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 6,
+		},
+
+	});
+	let prodCardSlider = new Swiper('.sProdCard-slider-js', {
+		spaceBetween: 30,
+		thumbs: {
+			swiper: prodCardThumb,
+		},
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3,
+		},
+		loop: true,
+	});
+	//end luckyone js
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

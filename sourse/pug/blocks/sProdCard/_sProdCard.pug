@@ -1,9 +1,42 @@
 mixin sProdCard(data)
 	// start sProdCard
 	+b.sProdCard.section#sProdCard&attributes(attributes)
-		+e.main-row
-			+e.slider-col.col-xxl-auto
+		+e.main-row.row.gy-4
+			+e.slider-col.col-auto
+				+sProdCardSliders()
 			+e.content-col.col
 
 
 	// end sProdCard
+
+mixin sProdCardSliders()
+	+b.sPCsliders
+		+e.slider-wrap
+			.swiper-container.sProdCard-slider-js
+				.swiper-wrapper
+					+prodCardSlide(1)
+					+prodCardSlide(2)
+					+prodCardSlide(2)
+					+prodCardSlide(2)
+					+prodCardSlide(2)
+		+e.thumb-wrap
+			.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+				+icon('chevron-left')
+			.swiper-container.sProdCard-thumb-js
+				.swiper-wrapper
+					+prodCardThumb(1)(class="big")
+					+prodCardThumb(2)(class="")
+					+prodCardThumb(2)(class="")
+					+prodCardThumb(2)(class="")
+					+prodCardThumb(2)(class="")
+			.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+				+icon('chevron-right')
+
+mixin prodCardThumb(imgNum)
+	.swiper-slide&attributes(attributes)
+		+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__th-item
+
+mixin prodCardSlide(imgNum)
+	.swiper-slide
+		+e.slide-img
+			+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__img-inner

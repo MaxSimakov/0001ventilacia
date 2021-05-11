@@ -266,7 +266,7 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	var _defaultSl;
+	var _defaultSl, _Swiper;
 
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
@@ -441,7 +441,31 @@ function eventHandler() {
 			nextEl: '.sManufacture .swiper-button-next',
 			prevEl: '.sManufacture .swiper-button-prev'
 		}
-	});
+	}); //luckyone js
+
+	var prodCardThumb = new Swiper('.sProdCard-thumb-js', (_Swiper = {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		freeMode: true,
+		loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		slideToClickedSlide: true,
+		freeModeMomentum: true
+	}, _defineProperty(_Swiper, "slideToClickedSlide", true), _defineProperty(_Swiper, "lazy", {
+		loadPrevNext: true,
+		loadPrevNextAmount: 6
+	}), _Swiper));
+	var prodCardSlider = new Swiper('.sProdCard-slider-js', {
+		spaceBetween: 30,
+		thumbs: {
+			swiper: prodCardThumb
+		},
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		loop: true
+	}); //end luckyone js
 }
 
 ;
