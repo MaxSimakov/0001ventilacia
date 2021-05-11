@@ -213,6 +213,13 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
+	var x = window.location.host;
+	var screenName;
+	screenName = document.body.dataset.bg;
+
+	if (screenName && x.includes("localhost:30")) {
+		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+	}
 
 	function setFixedNav() {
 		var topNav = document.querySelector('.top-nav  ');

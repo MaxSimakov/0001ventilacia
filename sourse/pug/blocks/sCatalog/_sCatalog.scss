@@ -4,12 +4,19 @@
 	// --sPB: ;
 	// --sTPB: ;
 
-	--fontSizeBase: 16px;
+	// --fontSizeBase: 14px;
+
+	p {
+		line-height: calc(24 / 14.5);
+		// font-size: rem(15);
+	}
 
 	&__row {
+		padding-top: rem(19);
 		@include media-breakpoint-up(xl) {
 			@include roww(38px);
 		}
+		margin-bottom: rem(-8);
 
 		max-width: 1000px;
 		// padding-bottom: rem();
@@ -17,13 +24,41 @@
 
 	ul {
 		list-style-type: none;
+		// margin-bottom: 1.5rem;
 		li {
 			position: relative;
+			display: flex;
+			font-size: rem(15);
+			padding-bottom: rem(5);
 
 			&::before {
 				content: "•";
+				margin-right: rem(8);
 			}
 		}
+	}
+
+	.pagination-wrapper ul {
+		margin-bottom: 1.3rem;
+	}
+
+	h2,
+	.h2 {
+		@include rfs(26px);
+		font-weight: bold;
+		margin-bottom: rem(25);
+	}
+	h3,
+	.h3 {
+		@include rfs(24px);
+		padding-top: rem(15);
+		margin-bottom: rem(30);
+		font-weight: bold;
+		color: #003c75;
+	}
+
+	table {
+		max-width: 840px;
 	}
 
 	@include media-breakpoint-up(sm) {
@@ -44,20 +79,17 @@
 	text-decoration: none !important;
 	background: #eff5fb;
 	color: #fff !important;
-	padding: rem(16);
+	padding: rem(23) rem(17) rem(27);
 	&:hover {
 		.catalogCard__textWrap {
 			box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
 		}
 	}
 
-	&__text {
-	}
-
 	&__imgWrap {
 		@include mt;
 		@include block(243, 183);
-		margin-bottom: rem(17);
+		margin-bottom: rem(15);
 		border: 4.16459px solid $white;
 		img {
 			@include a-cent;
@@ -76,8 +108,9 @@
 		border: 4.16459px solid $white;
 		background-color: $primary;
 		border-radius: 4px;
-		padding: rem(13) rem(23) rem(13) rem(17);
+		padding: rem(13) rem(23) rem(13) rem(13);
 		height: 100%;
+		min-height: rem(74);
 	}
 	&__text {
 		color: $white;
@@ -97,8 +130,13 @@
 		}
 	}
 }
-
+.table-wrap {
+	overflow-x: auto;
+	padding-bottom: 5px;
+	margin-bottom: rem(25);
+}
 .table {
+	min-width: 500px;
 	border-radius: 4px;
 	font-size: 14px;
 
@@ -111,6 +149,11 @@
 
 	td {
 		border: 1px solid #828282;
-		min-height: 70px;
+		height: 70px;
+		padding: rem(5);
+		@include media-breakpoint-up(sm) {
+			padding: rem(10);
+		}
+		vertical-align: top;
 	}
 }
