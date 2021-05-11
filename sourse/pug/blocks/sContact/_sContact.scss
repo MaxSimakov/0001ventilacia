@@ -4,12 +4,54 @@
 	&__content {
 	}
 	&__text-wrap {
+		display: flex;
+		flex-direction: column;
+		padding: rem(30) 0;
+		color: $white;
+		font-weight: 700;
+		line-height: 1.5;
+		p {
+			margin-bottom: rem(24);
+		}
+		a {
+			display: inline-block;
+			margin-bottom: rem(24);
+		}
 		@include media-breakpoint-up(lg) {
 			max-width: calc(100% - (var(--mapW) - (100vw - 100%) / 2));
+			min-height: rem(400);
+			padding: rem(55) rem(20) rem(40) rem(20);
+		}
+		.top-btn {
+			@include mt;
+			align-self: center;
+			width: 100%;
+			max-width: 207px;
+			height: 40px;
+			font-weight: normal;
+			font-size: rem(18);
+			line-height: (25 / 18);
+			color: #ffffff;
+			padding-left: rem(35);
+			margin: 0;
+			border-radius: 2px;
+			&:hover,
+			&:active {
+				background-color: $danger;
+				
+			}
+			&:before {
+				width: rem(12);
+				height: rem(14);
+				top: 11px;
+				left: 13px;
+				background-image: url(../img/svg/telephone-white.svg);
+				background-repeat: no-repeat;
+				background-size: 100%;
+			}
 		}
 	}
 	&__map-wrap {
-		
 		@include media-breakpoint-up(lg) {
 			width: var(--mapW);
 			position: absolute;
@@ -28,6 +70,9 @@
 	.tabs {
 		&__caption {
 			display: flex;
+			@include media-breakpoint-up(xxl) {
+				margin-left: rem(-19);
+			}
 		}
 		&__content {
 			position: relative;
