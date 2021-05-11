@@ -21,11 +21,11 @@ mixin sProdCard(data)
 				+e.btn Сферы применения
 				+e.btn Комплектация
 			+e.wrap
-				+e.content
+				+e.content.active
 					+e.descr
 						p Если стандартная длина L или диаметр D не удовлетворяют техническим требованиям проекта, Заказчик может указать произвольные размеры изделия. Максимальная длина прямых участков не ограничена, но следует помнить, что есть ограничения по транспортировке габаритных грузов. Кроме этого, воздуховоды крупных размеров сильно усложняют процесс монтажа.
 						p В зависимости от размеров изделия, толщина стенок может быть разной. В таблице ниже представлены рекомендуемые толщины стенок в зависимости от диаметра D.
-				+e.content.active
+				+e.content
 					+e.sub-row.row.align-items-center.gy-3
 						+e.slider-col.col-xl-auto
 							+sProdCardSliders()
@@ -45,46 +45,68 @@ mixin sProdCard(data)
 					+e.sub-row.row.align-items-center.gy-3
 						+e.slider-col.col-xl-auto
 							+e.table
-
+								+e.t-row--head.row
+									+e.key-col--head.col-auto D, мм
+									+e.val-col--head.col-auto Толщина стенок, мм
+								+tableRow('50 ÷ 400', '1')
+								+tableRow('50 ÷ 630', '1,2')
+								+tableRow('50 ÷ 1000', '1,5')
+								+tableRow('200 ÷ 2000', '2')
+								+tableRow('500 ÷ 2000', '3')
+								+tableRow('1000 ÷ 3000', '5')
 						+e.txt-col.col-xl
 							+e.red Таблица 1. Рекомендуемые толщины стенок в зависимости от диаметра D.
-				+e.content content 4
+				+e.content
+					+e.sub-row.row.align-items-center.gy-3
+						+e.slider-col.col-xl-auto
+							+sProdCardSliders(true)
+						+e.txt-col.col-xl
+							+e.red Таблица 1. Рекомендуемые толщины стенок в зависимости от диаметра D.
 	// end sProdCard
 
-mixin tableRow(head)
+mixin tableRow(keyTxt, valTxt)
 	+e.t-row.row
-		+e.head-col.col-auto
-		+e.val-col.col-auto
+		+e.key-col.col-auto=keyTxt
+		+e.val-col.col.text-end=valTxt
 
 
-mixin sProdCardSliders()
+mixin sProdCardSliders(video)
 	+b.sPCsliders--js
 		+e.slider-wrap
 			.swiper-container.sProdCard-slider-js
 				.swiper-wrapper
-					+prodCardSlide(1)
-					+prodCardSlide(2)
-					+prodCardSlide(2)
-					+prodCardSlide(2)
-					+prodCardSlide(2)
+					+prodCardSlide(1, video)
+					+prodCardSlide(2, video)
+					+prodCardSlide(2, video)
+					+prodCardSlide(2, video)
+					+prodCardSlide(2, video)
 		+e.thumb-wrap
 			.swiper-prev
 				img(loading="lazy" src="img/svg/chevron-left2.svg" alt="")
 			.swiper-container.sProdCard-thumb-js
 				.swiper-wrapper
-					+prodCardThumb(1)(class="big")
-					+prodCardThumb(2)(class="")
-					+prodCardThumb(2)(class="")
-					+prodCardThumb(2)(class="")
-					+prodCardThumb(2)(class="")
+					+prodCardThumb(1, video)(class="big")
+					+prodCardThumb(2, video)(class="")
+					+prodCardThumb(2, video)(class="")
+					+prodCardThumb(2, video)(class="")
+					+prodCardThumb(2, video)(class="")
 			.swiper-next
 				img(loading="lazy" src="img/svg/chevron-right2.svg" alt="")
 
-mixin prodCardThumb(imgNum)
-	.swiper-slide&attributes(attributes)
-		+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__th-item
+mixin prodCardThumb(imgNum, video)
+	if video
+		.swiper-slide&attributes(attributes)
+			+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__th-item.sPCsliders__th-item--video
+	else
+		.swiper-slide&attributes(attributes)
+			+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__th-item
 
-mixin prodCardSlide(imgNum)
-	.swiper-slide
-		+e.slide-img
-			+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__img-inner
+mixin prodCardSlide(imgNum, video)
+	if video
+		.swiper-slide
+			+e.slide-img--video(href="https://www.youtube.com/watch?v=HN-PCMFvoes&list=PLBSdPE852lAQg1SbOcDOoUfOVrWWDZWqU&index=325" data-fancybox="video")
+				+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__img-inner
+	else
+		.swiper-slide
+			+e.slide-img
+				+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__img-inner
