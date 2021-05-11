@@ -378,40 +378,47 @@ function eventHandler() {
 		},
 	});
 	//luckyone js
-	let prodCardThumb = new Swiper('.sProdCard-thumb-js', {
-		slidesPerView: 'auto',
-		spaceBetween: 10,
+	let slidersParents = document.querySelectorAll('.sPCsliders--js');
+	for (let parent of slidersParents){
+		let prodCardThumb = new Swiper(parent.querySelector('.sProdCard-thumb-js'), {
+			slidesPerView: 'auto',
+			spaceBetween: 5,
 
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		// touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-		slideToClickedSlide: true,
+			freeMode: true,
+			loopFillGroupWithBlank: true,
+			slideToClickedSlide: true,
+			freeModeMomentum: true,
+			slideToClickedSlide: true,
 
-		// navigation: {
-		// 	nextEl: '.sProdCard-thumb-next-js',
-		// 	prevEl: '.sProdCard-thumb-prev-js',
-		// },
+			navigation: {
+				nextEl: parent.querySelector('.swiper-next'),
+				prevEl: parent.querySelector('.swiper-prev'),
+			},
 
-		//lazy
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 6,
-		},
+			//lazy
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 6,
+			},
 
-	});
-	let prodCardSlider = new Swiper('.sProdCard-slider-js', {
-		spaceBetween: 30,
-		thumbs: {
-			swiper: prodCardThumb,
-		},
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 3,
-		},
-		loop: true,
-	});
+			observer: true,
+			observeParents: true
+		});
+		let prodCardSlider = new Swiper(parent.querySelector('.sProdCard-slider-js'), {
+			spaceBetween: 30,
+			thumbs: {
+				swiper: prodCardThumb,
+			},
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 3,
+			},
+			loop: true,
+
+			observer: true,
+			observeParents: true
+		});
+	}
 	//end luckyone js
 
 
