@@ -16,11 +16,26 @@
 		a {
 			display: inline-block;
 			margin-bottom: rem(24);
+			text-decoration: none;
+			color: $white;
+			span {
+				@include mt;
+				color: #0000FF;
+				padding-left: 5px;
+			}
+			&:hover {
+				span {
+					color: $danger;
+				}
+			}
 		}
 		@include media-breakpoint-up(lg) {
 			max-width: calc(100% - (var(--mapW) - (100vw - 100%) / 2));
 			min-height: rem(400);
 			padding: rem(55) rem(20) rem(40) rem(20);
+		}
+		@include media-breakpoint-up(xxl) {
+			padding-right: rem(25);
 		}
 		.top-btn {
 			@include mt;
@@ -34,6 +49,7 @@
 			color: #ffffff;
 			padding-left: rem(35);
 			margin: 0;
+			margin-top: auto;
 			border-radius: 2px;
 			&:hover,
 			&:active {
