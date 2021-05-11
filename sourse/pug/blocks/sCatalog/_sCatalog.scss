@@ -10,7 +10,20 @@
 		@include media-breakpoint-up(xl) {
 			@include roww(38px);
 		}
+
+		max-width: 1000px;
 		// padding-bottom: rem();
+	}
+
+	ul {
+		list-style-type: none;
+		li {
+			position: relative;
+
+			&::before {
+				content: "•";
+			}
+		}
 	}
 
 	@include media-breakpoint-up(sm) {
@@ -82,5 +95,22 @@
 		.icon {
 			font-size: rem(16);
 		}
+	}
+}
+
+.table {
+	border-radius: 4px;
+	font-size: 14px;
+
+	thead {
+		background: #828282;
+		font-weight: bold;
+		color: #fff;
+		border-radius: 4px 4px 0px 0px;
+	}
+
+	td {
+		border: 1px solid #828282;
+		min-height: 70px;
 	}
 }

@@ -15,9 +15,7 @@ function slideNext(speed, runCallbacks, internal) {
 
   var swiper = this;
   var params = swiper.params,
-      animating = swiper.animating,
-      enabled = swiper.enabled;
-  if (!enabled) return swiper;
+      animating = swiper.animating;
   var increment = swiper.activeIndex < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup;
 
   if (params.loop) {

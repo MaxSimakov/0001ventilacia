@@ -1,4 +1,4 @@
-export default function slideTo(index, speed, runCallbacks, internal, initial) {
+export default function slideTo(index, speed, runCallbacks, internal) {
   if (index === void 0) {
     index = 0;
   }
@@ -47,10 +47,9 @@ export default function slideTo(index, speed, runCallbacks, internal, initial) {
       previousIndex = swiper.previousIndex,
       activeIndex = swiper.activeIndex,
       rtl = swiper.rtlTranslate,
-      wrapperEl = swiper.wrapperEl,
-      enabled = swiper.enabled;
+      wrapperEl = swiper.wrapperEl;
 
-  if (swiper.animating && params.preventInteractionOnTransition || !enabled && !internal && !initial) {
+  if (swiper.animating && params.preventInteractionOnTransition) {
     return false;
   }
 

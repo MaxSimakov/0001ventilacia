@@ -11,10 +11,11 @@ include ../blocks/sClients/_sClients.pug
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sQuestions/_sQuestions.pug
 include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sidebar/_sidebar.pug
 
 block variables
 	- let  mainPage= null 
-	- let  bg= '02.png'
+	- let  bg= null
 
 block title
 	- let  title= 'Сварные воздуховоды и трубопроводы'
@@ -31,7 +32,7 @@ block pagecontent
 			+breadcrumb('Главная', 'Продукция', title)
 			+e.row.row.gy-5
 				+e.sidebar-col.col-lg-4.col-xl-3
-					+e.sidebar
+					+sidebar
 				+e.content-col.col-lg-8.col-xl-9
 					+e.title
 						h1= title

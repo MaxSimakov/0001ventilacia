@@ -17,9 +17,7 @@ function onTouchMove(event) {
   var data = swiper.touchEventsData;
   var params = swiper.params,
       touches = swiper.touches,
-      rtl = swiper.rtlTranslate,
-      enabled = swiper.enabled;
-  if (!enabled) return;
+      rtl = swiper.rtlTranslate;
   var e = event;
   if (e.originalEvent) e = e.originalEvent;
 

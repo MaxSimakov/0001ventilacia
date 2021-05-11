@@ -73,6 +73,10 @@ $output-bourbon-deprecation-warnings: false;
 
 .pagination-wrapper ul {
 	@extend .pagination;
+
+	li::before {
+		display: none;
+	}
 }
 
 .pagination-wrapper li .page-numbers {

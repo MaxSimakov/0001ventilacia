@@ -6,9 +6,7 @@ exports.default = onScroll;
 function onScroll() {
   var swiper = this;
   var wrapperEl = swiper.wrapperEl,
-      rtlTranslate = swiper.rtlTranslate,
-      enabled = swiper.enabled;
-  if (!enabled) return;
+      rtlTranslate = swiper.rtlTranslate;
   swiper.previousTranslate = swiper.translate;
 
   if (swiper.isHorizontal()) {

@@ -7,9 +7,7 @@ export default function onTouchStart(event) {
   var window = getWindow();
   var data = swiper.touchEventsData;
   var params = swiper.params,
-      touches = swiper.touches,
-      enabled = swiper.enabled;
-  if (!enabled) return;
+      touches = swiper.touches;
 
   if (swiper.animating && params.preventInteractionOnTransition) {
     return;

@@ -13,9 +13,7 @@ function onTouchEnd(event) {
       rtl = swiper.rtlTranslate,
       $wrapperEl = swiper.$wrapperEl,
       slidesGrid = swiper.slidesGrid,
-      snapGrid = swiper.snapGrid,
-      enabled = swiper.enabled;
-  if (!enabled) return;
+      snapGrid = swiper.snapGrid;
   var e = event;
   if (e.originalEvent) e = e.originalEvent;
 

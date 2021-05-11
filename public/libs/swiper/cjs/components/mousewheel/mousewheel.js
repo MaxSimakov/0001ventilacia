@@ -11,7 +11,6 @@ var _utils = require("../../utils/utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable consistent-return */
 function isEventSupported() {
   var document = (0, _ssrWindow.getDocument)();
   var eventName = 'onwheel';
@@ -123,19 +122,16 @@ var Mousewheel = {
   },
   handleMouseEnter: function handleMouseEnter() {
     var swiper = this;
-    if (!swiper.enabled) return;
     swiper.mouseEntered = true;
   },
   handleMouseLeave: function handleMouseLeave() {
     var swiper = this;
-    if (!swiper.enabled) return;
     swiper.mouseEntered = false;
   },
   handle: function handle(event) {
     var e = event;
     var disableParentSwiper = true;
     var swiper = this;
-    if (!swiper.enabled) return;
     var params = swiper.params.mousewheel;
 
     if (swiper.params.cssMode) {
