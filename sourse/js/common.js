@@ -166,7 +166,7 @@ const JSCCommon = {
 
 	},
 	// /tabs
- 
+
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -199,10 +199,10 @@ const JSCCommon = {
 };
 const $ = jQuery;
 
-function eventHandler() { 
+function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('.tabs--js');
-	JSCCommon.mobileMenu(); 
+	JSCCommon.mobileMenu();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 
@@ -271,7 +271,7 @@ function eventHandler() {
 		freeModeMomentum: true,
 
 	});
-	
+
 	// modal window
 	const swiperProduction = new Swiper('.sProduction .slider-index', {
 		// Optional parameters
@@ -385,6 +385,51 @@ function eventHandler() {
 			prevEl: '.sManufacture .swiper-button-prev',
 		},
 	});
+	//luckyone js
+	let slidersParents = document.querySelectorAll('.sPCsliders--js');
+	for (let parent of slidersParents){
+		let prodCardThumb = new Swiper(parent.querySelector('.sProdCard-thumb-js'), {
+			slidesPerView: 'auto',
+			spaceBetween: 5,
+
+			freeMode: true,
+			loopFillGroupWithBlank: true,
+			slideToClickedSlide: true,
+			freeModeMomentum: true,
+			slideToClickedSlide: true,
+
+			navigation: {
+				nextEl: parent.querySelector('.swiper-next'),
+				prevEl: parent.querySelector('.swiper-prev'),
+			},
+
+			//lazy
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 6,
+			},
+
+			observer: true,
+			observeParents: true
+		});
+		let prodCardSlider = new Swiper(parent.querySelector('.sProdCard-slider-js'), {
+			spaceBetween: 30,
+			thumbs: {
+				swiper: prodCardThumb,
+			},
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 3,
+			},
+			loop: true,
+
+			observer: true,
+			observeParents: true
+		});
+	}
+	//end luckyone js
+
+
 
 	const swiperHeaderBlock = new Swiper('.headerBlock__slider--js', {
 		// slidesPerView: 5,

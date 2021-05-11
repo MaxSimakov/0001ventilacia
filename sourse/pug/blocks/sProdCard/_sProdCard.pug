@@ -1,9 +1,90 @@
 mixin sProdCard(data)
 	// start sProdCard
 	+b.sProdCard.section#sProdCard&attributes(attributes)
-		+e.main-row
-			+e.slider-col.col-xxl-auto
-			+e.content-col.col
+		+e.main-row.row.gy-4
+			+e.slider-col.col-xl-auto
+				+sProdCardSliders()
+			+e.content-col.col-xl
+				+e.txt
+					p Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта.
+					p Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта.Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта. Здесь располагается короткое описание продукта.
+				+e.btns-cont
+					+e.price-btn(href="#") Узнать стоимость
+					+e.consult-btn(href='#')
+						+e.icon
+							img(loading="lazy" src="img/@2x/technical-support.png" alt="")
+						span Консультация специалиста
+		+b.tabs--js
+			+e.caption.d-none.d-lg-flex
+				+e.btn.active Описание
+				+e.btn Характеристики
+				+e.btn Сферы применения
+				+e.btn Комплектация
+			+e.wrap
+				+e.content
+					+e.descr
+						p Если стандартная длина L или диаметр D не удовлетворяют техническим требованиям проекта, Заказчик может указать произвольные размеры изделия. Максимальная длина прямых участков не ограничена, но следует помнить, что есть ограничения по транспортировке габаритных грузов. Кроме этого, воздуховоды крупных размеров сильно усложняют процесс монтажа.
+						p В зависимости от размеров изделия, толщина стенок может быть разной. В таблице ниже представлены рекомендуемые толщины стенок в зависимости от диаметра D.
+				+e.content.active
+					+e.sub-row.row.align-items-center.gy-3
+						+e.slider-col.col-xl-auto
+							+sProdCardSliders()
+						+e.txt-col.col-xl
+							+e.red Рисунок 1. Прямой участок сварного воздуховода
+							+e.data
+								strong
+									| L
+									|
+								span - Монтажная длина.
+								br
+								strong
+									| D
+									|
+								span - Диаметр.
+				+e.content
+					+e.sub-row.row.align-items-center.gy-3
+						+e.slider-col.col-xl-auto
+							+e.table
 
-
+						+e.txt-col.col-xl
+							+e.red Таблица 1. Рекомендуемые толщины стенок в зависимости от диаметра D.
+				+e.content content 4
 	// end sProdCard
+
+mixin tableRow(head)
+	+e.t-row.row
+		+e.head-col.col-auto
+		+e.val-col.col-auto
+
+
+mixin sProdCardSliders()
+	+b.sPCsliders--js
+		+e.slider-wrap
+			.swiper-container.sProdCard-slider-js
+				.swiper-wrapper
+					+prodCardSlide(1)
+					+prodCardSlide(2)
+					+prodCardSlide(2)
+					+prodCardSlide(2)
+					+prodCardSlide(2)
+		+e.thumb-wrap
+			.swiper-prev
+				img(loading="lazy" src="img/svg/chevron-left2.svg" alt="")
+			.swiper-container.sProdCard-thumb-js
+				.swiper-wrapper
+					+prodCardThumb(1)(class="big")
+					+prodCardThumb(2)(class="")
+					+prodCardThumb(2)(class="")
+					+prodCardThumb(2)(class="")
+					+prodCardThumb(2)(class="")
+			.swiper-next
+				img(loading="lazy" src="img/svg/chevron-right2.svg" alt="")
+
+mixin prodCardThumb(imgNum)
+	.swiper-slide&attributes(attributes)
+		+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__th-item
+
+mixin prodCardSlide(imgNum)
+	.swiper-slide
+		+e.slide-img
+			+pic(`prod-thumb-${imgNum}.jpg`).sPCsliders__img-inner
