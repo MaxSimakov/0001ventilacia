@@ -65,6 +65,49 @@ mixin sCatalog(data)
 			li VMQ резина (кремнийорганическая или силиконовая), имеет диапазон рабочих температур от &mdash;100&ordm;С до&nbsp;+270&ordm;С, устойчива к&nbsp;маслу, бензину, кислотам, щелочам, истиранию;
 			li FKM резина (фторкаучуковая), по&nbsp;своим свойствам аналогична силиконовой резине, но&nbsp;в&nbsp;зависимости от&nbsp;типа может выдерживать более высокую температуру, противостоять кислотам и&nbsp;щелочам;
 			li PTFE ленты (тефлоновые) самоклеющиеся, имеет диапазон рабочих температур от &mdash;70&ordm;С (при необходимости от &mdash;180&ordm;С) до&nbsp;+260&ordm;С, устойчива к&nbsp;маслу, бензину, кислотам, щелочам.
+		+catalogSlider
 
 	// end sCatalog
+
+
+mixin catalogSlider
+	+b.sPCsliders--js
+		+e.slider-wrap
+			.swiper-container.sProdCard-slider-js
+				.swiper-wrapper
+					+catalogdSlide(1)
+						+e.sliderDescr Рисунок&nbsp;1. Соединение на&nbsp;свободных фланцах из&nbsp;уголка.
+					+catalogdSlide(2)
+						+e.sliderDescr Рисунок&nbsp;2. Соединение на&nbsp;свободных фланцах из&nbsp;уголка.
+					+catalogdSlide(3)
+						+e.sliderDescr Рисунок&nbsp;3. Соединение на&nbsp;свободных фланцах из&nbsp;уголка.
+					+catalogdSlide(4)
+						+e.sliderDescr Рисунок&nbsp;4. Соединение на&nbsp;свободных фланцах из&nbsp;уголка.
+					+catalogdSlide(3)
+						+e.sliderDescr Рисунок&nbsp;3. Соединение на&nbsp;свободных фланцах из&nbsp;уголка.
+		+e.thumb-wrap
+			.swiper-prev
+				img(loading="lazy" src="img/svg/chevron-left2.svg" alt="")
+			.swiper-container.sProdCard-thumb-js
+				.swiper-wrapper
+					+catalogCardThumb(1)(class="big")
+					+catalogCardThumb(2)(class="")
+					+catalogCardThumb(3)(class="")
+					+catalogCardThumb(4)(class="")
+					+catalogCardThumb(3)(class="")
+			.swiper-next
+				img(loading="lazy" src="img/svg/chevron-right2.svg" alt="")
+
+mixin catalogCardThumb(imgNum)
+	.swiper-slide&attributes(attributes)
+		+pic(`catalog-img-${imgNum}.jpg`).sPCsliders__th-item
+
+mixin catalogdSlide(imgNum)
+	.swiper-slide
+		.row.align-items-center
+			+e.col.col-md-auto
+				+e.slide-img(href=`img/@2x/catalog-img-${imgNum}.jpg` data-fancybox='gal')
+					+pic(`catalog-img-${imgNum}.jpg`).sPCsliders__img-inner
+			.col
+				block
 
