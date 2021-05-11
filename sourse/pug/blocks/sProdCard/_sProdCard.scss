@@ -168,6 +168,35 @@
 			font-size: rem(16);
 			padding: rem(5) rem(10);
 		}
+		&__table{
+			border-radius: rem(5);
+			overflow: hidden;
+			border: 1px solid $gray-620;
+		}
+		&__t-row{
+			@include roww(0);
+			border-bottom: 1px solid $gray-620;
+			&:last-child{
+				border-bottom: none;
+			}
+
+			&--head{
+				background: $gray-620;
+				color: $white;
+
+				font-weight: bold;
+				font-size: rem(16);
+			}
+		}
+		&__key-col{
+			min-width: rem(160);
+			width: 38%;
+			padding: rem(10);
+			border-right: 1px solid $gray-620;
+		}
+		&__val-col{
+			padding: rem(10);
+		}
 		&__{}
 	}
 } // end.sProdCard
@@ -193,9 +222,9 @@
 				width: 145px;
 			}
 
-			--thumb-aft-o: 0;
+			--thumb-aft-bord: transparent;
 			&.swiper-slide-thumb-active{
-				--thumb-aft-o: 1;
+				--thumb-aft-bord: #{$gray-620};
 			}
 		}
 		//prev, next
@@ -229,7 +258,6 @@
 		position: relative;
 		&:after{
 			@include mt();
-			opacity: var(--thumb-aft-o, 0);
 			content: '';
 			position: absolute;
 			top: 0;
@@ -237,7 +265,7 @@
 			width: 100%;
 			height: 100%;
 			z-index: 1;
-			border: 1px solid $gray-620;
+			border: 1px solid var(--thumb-aft-bord, 0);
 		}
 
 		height: 105px;
@@ -245,6 +273,33 @@
 		img{
 			height: 100%;
 			width: auto;
+		}
+
+		&--video{
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($gray-450, .5);
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				z-index: 2;
+				top: 50%;
+				left: 55%;
+				transform: translateX(-50%) translateY(-50%);
+				width: rem(47);
+				height: rem(47);
+
+				background-image: url(../img/svg/play.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
 		}
 	}
 	//
@@ -264,6 +319,33 @@
 		height: 0;
 		padding-top: (288/396) * 100%;
 		position: relative;
+
+		&--video{
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($gray-450, .5);
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				z-index: 2;
+				top: 50%;
+				left: 55%;
+				transform: translateX(-50%) translateY(-50%);
+				width: rem(62);
+				height: rem(62);
+
+				background-image: url(../img/svg/play.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
 	}
 	&__img-inner{
 		position: absolute;
