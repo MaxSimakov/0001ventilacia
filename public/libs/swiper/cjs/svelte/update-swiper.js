@@ -40,6 +40,13 @@ function updateSwiper(swiper, passedParams, changedParams) {
     needNavigationInit = true;
   }
 
+  if (changedParams.includes('virtual')) {
+    if (passedParams.virtual && passedParams.virtual.slides && swiper.virtual) {
+      swiper.virtual.slides = passedParams.virtual.slides;
+      swiper.virtual.update();
+    }
+  }
+
   updateParams.forEach(function (key) {
     if ((0, _utils.isObject)(currentParams[key]) && (0, _utils.isObject)(passedParams[key])) {
       (0, _utils.extend)(currentParams[key], passedParams[key]);

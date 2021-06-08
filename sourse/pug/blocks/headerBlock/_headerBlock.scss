@@ -8,14 +8,15 @@
 
 	.swiper-pagination {
 		bottom: 20px;
-		left: -8%;
+		left: 0;
+		z-index: 20;
 		.swiper-pagination-bullet {
 			position: relative;
 			margin: 0 rem(6);
 			width: 15.86px;
 			height: 15.86px;
 			background-color: transparent;
-			z-index: -1;
+			// z-index: -1;
 
 			&::before {
 				content: '';
@@ -48,6 +49,10 @@
 
 	h2 {
 		margin-bottom: 1px;
+	}
+
+	.swiper-pagination{
+
 	}
 
 	@include media-breakpoint-up(xl) {}

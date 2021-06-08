@@ -247,59 +247,51 @@ function eventHandler() {
 			loadPrevNext: true
 		},
 		watchOverflow: true
-	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _defineProperty(_defaultSl, "pagination", {
+	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "pagination", {
 		el: ' .swiper-pagination',
 		type: 'bullets',
-		clickable: true // renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// }
-
+		clickable: true
 	}), _defaultSl);
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true
-	})); // modal window
+		slidesPerView: 1
+	}));
+	var prodSliders = document.querySelectorAll(".sProduction"); // modal window
 
-	var swiperProduction = new Swiper('.sProduction .slider-index', {
-		// Optional parameters
-		loop: true,
-		watchOverflow: true,
-		slidesPerView: 1,
-		spaceBetween: 20,
-		lazy: {
-			loadPrevNext: true
-		},
-		// Responsive breakpoints
-		breakpoints: {
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 20
+	prodSliders.forEach(function (el) {
+		var swiperProduction = new Swiper(el.querySelector(' .slider-index'), {
+			// Optional parameters
+			loop: true,
+			watchOverflow: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			lazy: {
+				loadPrevNext: true
 			},
-			992: {
-				slidesPerView: 3,
-				spaceBetween: 20
+			// Responsive breakpoints
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20
+				},
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 20
+				},
+				1400: {
+					slidesPerView: 4,
+					spaceBetween: 40
+				}
 			},
-			1200: {
-				slidesPerView: 4,
-				spaceBetween: 20
-			},
-			1400: {
-				slidesPerView: 4,
-				spaceBetween: 40
+			// Navigation arrows
+			navigation: {
+				nextEl: el.querySelector('.swiper-button-next'),
+				prevEl: el.querySelector('.swiper-button-prev')
 			}
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.sProduction .swiper-button-next',
-			prevEl: '.sProduction .swiper-button-prev'
-		}
+		});
 	});
 	var swiperClients = new Swiper('.sClients .slider-index', {
 		// Optional parameters
@@ -401,7 +393,16 @@ function eventHandler() {
 			}), _defineProperty(_Swiper, "lazy", {
 				loadPrevNext: true,
 				loadPrevNextAmount: 6
-			}), _defineProperty(_Swiper, "observer", true), _defineProperty(_Swiper, "observeParents", true), _Swiper));
+			}), _defineProperty(_Swiper, "observer", true), _defineProperty(_Swiper, "observeParents", true), _defineProperty(_Swiper, "on", {
+				slideChange: function slideChange(swiper) {
+					if (swiper.$wrapperEl.attr('data-use-subtitles')) {
+						var titlesUid = swiper.$wrapperEl.attr('data-subtitles-uid');
+						var titlesUidBlock = '.js_' + titlesUid + '_titles';
+						$(titlesUidBlock).hide();
+						$(titlesUidBlock).eq(swiper.activeIndex - 1).show();
+					}
+				}
+			}), _Swiper));
 			var prodCardSlider = new Swiper(parent.querySelector('.sProdCard-slider-js'), {
 				spaceBetween: 30,
 				thumbs: {
@@ -413,7 +414,11 @@ function eventHandler() {
 				},
 				loop: true,
 				observer: true,
-				observeParents: true
+				observeParents: true,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				}
 			});
 		} //end luckyone js
 

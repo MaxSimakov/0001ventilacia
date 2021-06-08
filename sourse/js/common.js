@@ -238,71 +238,66 @@ function eventHandler() {
 		watchOverflow: true,
 		spaceBetween: 0,
 		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
+		// navigation: {
+		// 	nextEl: '.swiper-button-next',
+		// 	prevEl: '.swiper-button-prev',
+		// },
 		pagination: {
 			el: ' .swiper-pagination',
 			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
+			clickable: true, 
 		},
 	}
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-
-	});
-
-	// modal window
-	const swiperProduction = new Swiper('.sProduction .slider-index', {
-		// Optional parameters
-		loop: true,
-		watchOverflow: true,
 		slidesPerView: 1,
-		spaceBetween: 20,
-		lazy: {
-			loadPrevNext: true,
-		},
-		// Responsive breakpoints
-		breakpoints: {
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 20,
-			},
-			992: {
-				slidesPerView: 3,
-				spaceBetween: 20,
-			},
-			1200: {
-				slidesPerView: 4,
-				spaceBetween: 20,
-			},
-			1400: {
-				slidesPerView: 4,
-				spaceBetween: 40,
-			},
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.sProduction .swiper-button-next',
-			prevEl: '.sProduction .swiper-button-prev',
-		},
 	});
 
-	const swiperClients = new Swiper('.sClients .slider-index', {
-		// Optional parameters
-		loop: true,
+	let prodSliders = document.querySelectorAll(".sProduction");
+	// modal window
+	prodSliders.forEach((el)=>{
+
+		const swiperProduction = new Swiper(el.querySelector(' .slider-index'), {
+			// Optional parameters
+			loop: true,
+			watchOverflow: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			lazy: {
+				loadPrevNext: true,
+			},
+			// Responsive breakpoints
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
+				1400: {
+					slidesPerView: 4,
+					spaceBetween: 40,
+				},
+			},
+			// Navigation arrows
+			navigation: {
+				nextEl: el.querySelector('.swiper-button-next'),
+				prevEl: el.querySelector('.swiper-button-prev'),
+			},
+		});
+	})
+		
+		const swiperClients = new Swiper('.sClients .slider-index', {
+			// Optional parameters
+			loop: true,
 		watchOverflow: true,
 		slidesPerView: 2,
 		spaceBetween: 20,
@@ -402,7 +397,17 @@ function eventHandler() {
 			},
 
 			observer: true,
-			observeParents: true
+			observeParents: true,
+			on: {
+				slideChange: function (swiper) {
+					if (swiper.$wrapperEl.attr('data-use-subtitles')) {
+						let titlesUid = swiper.$wrapperEl.attr('data-subtitles-uid');
+						let titlesUidBlock = '.js_' + titlesUid + '_titles';
+						$(titlesUidBlock).hide();
+						$(titlesUidBlock).eq((swiper.activeIndex - 1)).show();
+					}
+				}
+			}
 		});
 		let prodCardSlider = new Swiper(parent.querySelector('.sProdCard-slider-js'), {
 			spaceBetween: 30,
@@ -416,7 +421,11 @@ function eventHandler() {
 			loop: true,
 
 			observer: true,
-			observeParents: true
+			observeParents: true,
+			navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
 		});
 	}
 	//end luckyone js
