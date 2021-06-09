@@ -3,6 +3,16 @@ mixin sProdCard(data)
 	+b.sProdCard.section#sProdCard&attributes(attributes)
 		+e.main-row.row.gy-4
 			+e.slider-col.col-xl-auto
+				//- .fotorama( data-allowfullscreen="true")
+				//- 	- for (var x = 0; x < 8; x++)
+				//- 		img(src='img/@2x/prod-1.jpg')
+				//- 		img(src='img/@2x/prod-2.jpg')
+				.fotorama(data-nav='thumbs' data-arrows="true" data-allowfullscreen="true" data-thumbwidth="150" data-thumbheight="110")
+					- for (var x = 0; x < 8; x++)
+						a(href='img/@2x/prod-1.jpg')
+							img(src=`img/@2x/prod-thumb-1.jpg` )
+						a(href='img/@2x/prod-2.jpg')
+							img(src=`img/@2x/prod-thumb-2.jpg` )
 				+sProdCardSliders()
 			+e.content-col.col-xl
 				+e.txt
@@ -71,6 +81,7 @@ mixin tableRow(keyTxt, valTxt)
 
 
 mixin sProdCardSliders(video)
+	
 	+b.sPCsliders--js
 		+e.slider-wrap
 			.swiper-container.sProdCard-slider-js

@@ -56,6 +56,7 @@
 		right: 0;
 		top: rem(2);
 		@include mt;
+		pointer-events: none;
 	}
 	&.active .sub-menu {
 		display: block;
@@ -88,4 +89,31 @@
 			border-color: currentColor;
 		}
 	}
+}
+
+
+ 
+.fotorama__wrap--css3 .fotorama__thumb {
+	margin-right: rem(20);
+}
+.fotorama__thumb-border{
+	border-color: $primary;
+}
+
+.fotorama__arr--prev{
+	background: none;
+	&::before{
+		content: url(../img/svg/chevron-left2.svg);
+	}
+}
+.fotorama__arr--next{
+	background: none;
+	&::before{
+		content: url(../img/svg/chevron-right2.svg);
+	}
+}
+
+.fotorama{
+	text-align: center;
+	margin-bottom: 10px;
 }
