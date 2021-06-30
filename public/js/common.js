@@ -437,7 +437,7 @@ function eventHandler() {
 		slideToClickedSlide: true // freeModeMomentum: true,
 
 	}));
-	$(document).on("click", ".has-child> a", function (e) {
+	$(document).on("click", ".has-child> .left_menu_arraw ", function (e) {
 		e.preventDefault();
 		$(this).next().slideToggle(function () {
 			$(this).parent().toggleClass('active');

@@ -4,6 +4,7 @@ mixin li(t)
 	li.has-child&attributes(attributes)
 		a(href="#")= t
 		//- block
+		span.left_menu_arraw 
 		ul.sub-menu
 			+child("Из углеродистой стали")
 			+child("Из нержавеющей стали")
