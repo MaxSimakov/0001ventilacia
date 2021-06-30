@@ -55,6 +55,7 @@
 		position: absolute;
 		right: 0;
 		top: rem(12);
+		cursor: pointer;
 		@include mt;
 		// pointer-events: none;
 	}
