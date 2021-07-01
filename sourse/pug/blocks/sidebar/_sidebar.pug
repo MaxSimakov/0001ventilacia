@@ -6,6 +6,13 @@ mixin li(t)
 		//- block
 		span.left_menu_arraw 
 		ul.sub-menu
+			li.has-child&attributes(attributes)
+				a(href="#")= t
+				//- block
+				span.left_menu_arraw 
+				ul
+					+child("Из углеродистой стали")
+					+child("Из углеродистой стали")
 			+child("Из углеродистой стали")
 			+child("Из нержавеющей стали")
 			+child("Из титана") 
