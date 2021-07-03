@@ -31,8 +31,7 @@ mixin mnu()
 
 mixin mnu()
 	-
-		var nav= {
-			"О компании":"#sContact",
+		var nav= { 
 			"Продукция":"#",
 			"Сферы применения":"#",
 			"Производство":"#",
@@ -40,19 +39,19 @@ mixin mnu()
 			"Контакты":"#"
 			}
 	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		//- +e.LI.item--has-children( itemprop="item" )
-		//- 	+e.A.link(href="#" itemprop="url") О нас
-		//- 	+b.UL.sub-menu
-		//- 		-
-		//- 			var subnav= { 
-		//- 				"Строительство загородных домов":"#",
-		//- 				"Отделка загородных домов":"#",
-		//- 				"Покраска деревянных домов":"#",
-		//- 				"Штукатурные фасады загородных домов":"#" ,
-		//- 				}
-		//- 		each sublinkPatch, sublinkName in nav
-		//- 			+e.LI.item( temprop="item"  )
-		//- 				+e.A.link(href="#" itemprop="url")= sublinkName 
+		+e.LI.item--has-children( itemprop="item" )
+			+e.A.link(href="#" itemprop="url") О компании
+			+b.UL.sub-menu
+				-
+					var subnav= { 
+						"Строительство загородных домов":"#",
+						"Отделка загородных домов":"#",
+						"Покраска деревянных домов":"#",
+						"Штукатурные фасады загородных домов":"#" ,
+						}
+				each sublinkPatch, sublinkName in nav
+					+e.LI.item( temprop="item"  )
+						+e.A.link(href="#" itemprop="url")= sublinkName 
 						
 		each linkPatch, linkName in nav
 			+e.LI.item( temprop="item" itemprop="url"): +e.A.link(href="#" itemprop="url")= linkName

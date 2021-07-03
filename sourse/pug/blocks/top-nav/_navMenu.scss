@@ -10,6 +10,7 @@
 	flex-wrap: wrap;
 
 	&__item {
+		position: relative;
 		&--search {
 			@include media-breakpoint-up(lg) {
 				display: flex;
@@ -65,5 +66,55 @@
 		&:hover, &:active {
 			color: $danger;
 		}
+	}
+
+		@include media-breakpoint-up(lg){
+
+			&__item--has-children{
+				&::before{
+					content: '';
+					@include a-cent1(x);
+					@include triangle(26px 14px, #fff, down);
+					top: 100%;
+					z-index: 5;
+					@include mt;
+					transform-origin: 0 0;
+					transform: scaleY(var(--op, 0));
+					opacity: var(--op, 0);
+					visibility: var(--vis, hidden);
+				}
+				
+			}
+		}
+	&__item:hover{
+		--op:1; 
+		--vis: visible;
+	}
+	.sub-menu{
+		@include mt;
+		display: block;
+		@include media-breakpoint-up(lg) {
+
+			position: absolute;
+			transform-origin: 0 0;
+			transform: scaleY(var(--op, 0));
+			opacity: var(--op,0);
+			visibility: var(--vis, hidden);
+		}
+		list-style: none;
+		padding-top: rem(15);
+		padding-bottom: rem(15);
+		a{
+			display: block;
+			padding: rem(10) rem(30);
+			min-width: rem(320px);
+			color: #629fda;
+			text-decoration: none !important;
+			&:hover{
+				background-color: #fff;
+				color: $primary;
+			}
+		}
+		background-color: $primary;
 	}
 }
