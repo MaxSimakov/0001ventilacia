@@ -62,7 +62,7 @@
 		text-decoration: none;
 		color: $indigo;
 		@include media-breakpoint-up(xl) {
-			padding: 0 rem(20);
+			padding: 0 rem(10);
 		}
 		&:hover, &:active {
 			color: $danger;
